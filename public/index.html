@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rhema Safaris</title>
+  <style>
+    /* Rhema Safari Custom Styles */
+    :root {
+        --rhema-green-light: #7FB069;
+        --rhema-green-dark: #2D5016;
+        --rhema-brown: #D4A574;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { 
+        width: 8px; 
+    }
+    ::-webkit-scrollbar-track { 
+        background: #f1f1f1; 
+    }
+    ::-webkit-scrollbar-thumb { 
+        background: var(--rhema-green-light); 
+        border-radius: 4px; 
+    }
+    ::-webkit-scrollbar-thumb:hover { 
+        background: var(--rhema-green-dark); 
+    }
+
+    html { 
+        scroll-behavior: smooth; 
+    }
+
+    /* Custom button styles */
+    .btn-rhema-primary {
+        background: linear-gradient(135deg, var(--rhema-green-light), var(--rhema-green-dark));
+        transition: all 0.3s ease;
+    }
+    .btn-rhema-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(127, 176, 105, 0.3);
+    }
+
+    /* Image overlay effects */
+    .image-overlay { 
+        position: relative; 
+        overflow: hidden; 
+    }
+    .image-overlay::before {
+        content: '';
+        position: absolute;
+        top: 0; 
+        left: 0; 
+        right: 0; 
+        bottom: 0;
+        background: linear-gradient(45deg, rgba(127, 176, 105, 0.8), rgba(45, 80, 22, 0.8));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 1;
+    }
+    .image-overlay:hover::before { 
+        opacity: 1; 
+    }
+    .image-overlay .overlay-content {
+        position: absolute;
+        top: 50%; 
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 2;
+    }
+    .image-overlay:hover .overlay-content { 
+        opacity: 1; 
+    }
+
+    /* Base styles */
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+            'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+            sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Ensure full height */
+    html, body, #root {
+        height: 100%;
+    }
+
+    /* Remove default margins and paddings */
+    h1, h2, h3, h4, h5, h6, p, ul, ol, li {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* List styles */
+    ul, ol {
+        list-style: none;
+    }
+
+    /* Link styles */
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    /* Button styles */
+    button {
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-family: inherit;
+    }
+
+    /* Input styles */
+    input, select, textarea {
+        font-family: inherit;
+    }
+
+    /* Focus styles for accessibility */
+    button:focus,
+    input:focus,
+    select:focus,
+    textarea:focus,
+    a:focus {
+        outline: 2px solid #7FB069;
+        outline-offset: 2px;
+    }
+
+    /* Smooth transitions */
+    * {
+        transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    /* Mobile responsive base */
+    @media (max-width: 768px) {
+        .container {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+    }
+
+    /* Print styles */
+    @media print {
+        * {
+            background: white !important;
+            color: black !important;
+        }
+    }
+
+    /* Reduced motion preferences */
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+
+    /* High contrast mode support */
+    @media (prefers-contrast: high) {
+        .bg-green-600 {
+            background-color: #000000 !important;
+        }
+        .text-green-600 {
+            color: #000000 !important;
+        }
+        .border-green-600 {
+            border-color: #000000 !important;
+        }
+    }
+
+    /* Dark mode support (if needed in future) */
+    @media (prefers-color-scheme: dark) {
+        /* Base dark mode styles can be added here */
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+</body>
+</html>
